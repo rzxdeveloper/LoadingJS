@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+</head>
+<body>
+    <div id="app" style="display:flex ; justify-content: center; align-items:center; height: 100vh;">
+        <!-- new element create by us -->
+    </div>
+
+    <script>
+        onload = function() {
+            //Declaration Variable
+            //we use Loading with big L 
+
+            let id = document.getElementById("app")
+            let Loading = document.createElement("div")
+
+            // fill the content
+            // fill with style & We will bring up text "loading"
+            Loading.textContent = "loading"
+            Loading.style.fontSize = "28px"
+            id.appendChild(Loading)
+            
+            // How long does it take to change the DOM
+            let loaded = setInterval(() => {
+                Loading.textContent = Loading.textContent + "." // . will increase before 4 seconds
+            },1000 ) // 1 second & . will increase every 1 second
+
+            //stop interval
+            setTimeout(() => {
+                clearInterval(loaded) 
+                Loading.textContent = "Welcome To My World"
+            }, 4000) // 4 second
+
+        }
+    </script>
+</body>
+</html>
